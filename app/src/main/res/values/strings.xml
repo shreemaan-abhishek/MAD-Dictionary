@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MAD Dictionary</string>
+    <string name="background">background</string>
 </resources>
