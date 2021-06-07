@@ -22,6 +22,10 @@ class DictionaryViewModel : ViewModel() {
     val response: LiveData<Result>
         get() = _response
 
+    private val _ipaNotation = MutableLiveData<String>()
+    val ipaNotation: LiveData<String>
+    get() = _ipaNotation
+
 //    we will increment this value so that observer gets notified in the DictionaryActivity and
 //    pops up a toast that says, "Meanings for the given word not found"
 
@@ -46,6 +50,13 @@ class DictionaryViewModel : ViewModel() {
                 val result: Result = response?.get(0)
                 _progressBarVisibility.value = View.GONE
                 _response.value = result
+
+                // handling the cases where the api does not return any IPA notation
+                if (result.phonetics.isEmpty()){
+                    _ipaNotation.value = "IPA notation unavailable"
+                } else {
+                    _ipaNotation.value = result.phonetics[0].text
+                }
             } catch (e: Exception){
                 _progressBarVisibility.value = View.GONE
                 if(e.toString() == ERROR_CODE_404){

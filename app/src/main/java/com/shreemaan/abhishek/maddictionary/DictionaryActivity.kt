@@ -38,12 +38,6 @@ class DictionaryActivity : AppCompatActivity() {
         dictionaryViewModel.response.observe(this, {
             tvWord.text = it.word
 
-            // handling the cases where the api does not return any IPA notation
-            try {
-                tvPhonetic.text = it.phonetics[0].text
-            } catch (e: Exception) {
-                tvPhonetic.text = "IPA not available" // IPA -> International Phonetic Alphabet
-            }
             rvMeanings.layoutManager = LinearLayoutManager(
                 this,
                 RecyclerView.VERTICAL, false
@@ -51,6 +45,10 @@ class DictionaryActivity : AppCompatActivity() {
             // providing data to the child RecyclerView in the nested RecyclerView
             // see: https://medium.com/android-news/easily-adding-nested-recycler-view-in-android-a7e9f7f04047
             rvMeanings.adapter = MeaningsAdapter(it.meanings)
+        })
+
+        dictionaryViewModel.ipaNotation.observe(this, {
+            tvPhonetic.text = it
         })
 
         dictionaryViewModel.forShowingError404Toast.observe(this, {
