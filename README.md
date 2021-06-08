@@ -6,7 +6,7 @@ in the Android SDK like Coroutine, View/DataBinding, MVVM architecture, Recycler
 https://user-images.githubusercontent.com/66422819/121009667-2bee2480-c7b4-11eb-9778-bf3cddd5ffac.mp4
 
 
-## Brief info about this projetc:
+## Brief info about this project:
 
 This app displays meanings of words using a free [Dicionary API](https://dictionaryapi.dev/). This app makes network calls asynchronously using Coroutines
 and Retrofit and with the help of Moshi, the JSON is parsed into Kotlin objects with ease!! This app uses MVVM app architecture and displays the results in 
