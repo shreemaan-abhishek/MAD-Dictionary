@@ -20,5 +20,5 @@ This app might be lagging behind in some aspects so please feel free to contribu
 * And many more ++
 
 ## FORK ME
-feel free to frok this project, ask any request and any contribution from you will be appreciated.
+Feel free to frok this project, any contribution from you will be appreciated.
 Thank You!
