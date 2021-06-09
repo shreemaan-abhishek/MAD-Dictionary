@@ -27,15 +27,15 @@ class IntroActivity : AppCompatActivity() {
         val appName: TextView = findViewById(R.id.appName)
 
         // animating appName, bg and lottie json file
-        splash.animate().translationY(-4000f).setDuration(1600).startDelay = 3000
-        appName.animate().translationY(-4000f).setDuration(1000).startDelay = 3000
-        lottieAnimationView.animate().translationY(1400f).setDuration(1000).startDelay = 3000
+        splash.animate().translationY(-4000f).setDuration(1600).startDelay = 2000
+        appName.animate().translationY(-4000f).setDuration(1000).startDelay = 2000
+        lottieAnimationView.animate().translationY(1400f).setDuration(1000).startDelay = 2000
 
         // using postDelayed(Runnable, time) method to send a message with a delayed time.
         Handler().postDelayed({
             val intent = Intent(this, DictionaryActivity::class.java)
             startActivity(intent)
             finish()
-        }, 4500) // 4500 -> miliseconds => 4.1 secs
+        }, 3500) // 3500 -> miliseconds => 3.1 secs
     }
 }
